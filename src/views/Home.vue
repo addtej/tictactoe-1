@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <HelloWorld
+    <TicTacToe
       msg="Tic Tac Toe"
       :seanConnery="seanConnery"
       :vectorSquare="vectorSquare"
@@ -9,13 +9,12 @@
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TicTacToe from '@/components/TicTacToe.vue'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    TicTacToe
   },
   data:()=>(
     {

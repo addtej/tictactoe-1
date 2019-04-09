@@ -26,14 +26,11 @@
             </h1>
           </div>
           <button class="undoButton btn btn-outline-primary" @click="undo">Undo</button>
-
           <br><br>
         </div>
         <table>
           <tr>
-            <td v-on:click="insertItem(0)" class="cell cell0" id="0">
-              <div v-html="obj[0]"></div>
-            </td>
+            <td v-on:click="insertItem(0)" class="cell cell0" id="0"><div v-html="obj[0]"></div></td>
             <td v-on:click="insertItem(1)" class="cell cell1" id="1"><div v-html="obj[1]"></div></td>
             <td v-on:click="insertItem(2)" class="cell cell2" id="2"><div v-html="obj[2]"></div></td>
           </tr>
@@ -48,11 +45,9 @@
             <td v-on:click="insertItem(8)" class="cell cell8" id="8"><div v-html="obj[8]"></div></td>
           </tr>
         </table>
-        <center style="margin-top:400px"><button class="btn btn-primary" v-on:click="restartGame"> Restart Game </button></center>
+        <center style="margin-top:400px"><button class="btn btn-primary restartButton" v-on:click="restartGame"> Restart Game </button></center>
       </div>
-
     </p>
-
   </div>
 </template>
 
@@ -62,7 +57,7 @@ import getWinningCombination from '../models/getWinningCombination';
 import 'bootstrap'
 
 export default {
-  name: 'HelloWorld',
+  name: 'TicTacToe',
   props: {
     msg: String,
     vectorSquare: String,
@@ -106,7 +101,7 @@ export default {
       }
       else if(this.playerB && this.obj[cell]===null && !this.winnerMessage){
         if(this.standardMode){
-          this.obj[cell] = '<strong style="font-size:84px">O</strong>';
+          this.obj[cell] = '<strong style="font-size:84px">X</strong>';
         }
         else if(this.championshipMode){
           this.obj[cell] = this.vectorSquare;
@@ -128,7 +123,6 @@ export default {
           else if(this.championshipMode){
             this.WinnerMessageText = this.seanConnery + " is the winner!";
           }
-          // this.WinnerMessageText = "O is the Winner! ";
           this.playerAScore++;
           let winningComb = getWinningCombination(this.playerAPlays);
           this.styleWinningombinationCells(winningComb);
@@ -137,8 +131,6 @@ export default {
           if(this.playCount===9){
             this.winnerMessage = true;
             this.WinnerMessageText = "It is a Draw! ";
-            let winningComb = getWinningCombination(this.playerBPlays);
-            this.styleWinningombinationCells(winningComb);
           }
         }
       }
@@ -152,6 +144,8 @@ export default {
             this.WinnerMessageText = this.vectorSquare + " is the winner!";
           }
           this.playerBScore++;
+          let winningComb = getWinningCombination(this.playerBPlays);
+          this.styleWinningombinationCells(winningComb);
         }
       }
     },
@@ -214,7 +208,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 h3 {
   margin: 40px 0 0;

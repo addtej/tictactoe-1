@@ -15,4 +15,5 @@ export default function getWinningCombination(plays){
       return win;
     }
   }
+  return [];
 }

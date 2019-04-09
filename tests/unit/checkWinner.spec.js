@@ -8,6 +8,9 @@ describe('checkWinner.js', () => {
   it('check if the play [0, 1, 2] wins', () => {
     expect(checkWinner([0, 1, 2])).toBeTruthy()
   })
+  it('check if the play [7, 1, 4, 2] wins', () => {
+    expect(checkWinner([7, 1, 4, 2])).toBeTruthy()
+  })
   it('check if the play [0, 9, 2] wins', () => {
     expect(checkWinner([0, 9, 2])).toBeFalsy()
   })

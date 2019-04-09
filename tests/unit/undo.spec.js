@@ -1,8 +1,8 @@
 import { mount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import TicTacToe from '@/components/TicTacToe.vue'
 
-describe('HelloWorld.vue', () => {
-  const wrapper = mount(HelloWorld);
+describe('TicTacToe.vue - Undo feature', () => {
+  const wrapper = mount(TicTacToe);
   wrapper.setData({
     playerA: true,
     playerB: false,
@@ -23,10 +23,10 @@ describe('HelloWorld.vue', () => {
   it('has a undo button', () => {
     expect(wrapper.contains('.undoButton')).toBe(true)
   })
-  it('expect vm', ()=>{
+  it('expect undo button be enabled', ()=>{
     expect(wrapper.vm.undoDisabled).toBeFalsy()
   })
-  it('onclick', ()=>{
+  it('on clicking the undo button', ()=>{
     const undoButton = wrapper.find('.undoButton');
     undoButton.trigger('click');
     expect(wrapper.vm.playerBPlays).toEqual([])
@@ -34,7 +34,4 @@ describe('HelloWorld.vue', () => {
     expect(wrapper.vm.playerA).toBeFalsy()
     expect(wrapper.vm.undoDisabled).toBeTruthy()
   })
-
 })
-
-//https://vue-test-utils.vuejs.org/guides/#getting-started
