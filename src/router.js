@@ -1,8 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+// import Bootstrap from 'bootstrap'
+// var $ = require("jquery");
+import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(Router)
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 export default new Router({
   mode: 'history',
