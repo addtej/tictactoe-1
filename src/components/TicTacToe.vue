@@ -25,8 +25,9 @@
               <small class="text-muted"> Plays</small>
             </h1>
           </div>
-          <button class="undoButton btn btn-outline-primary" @click="undo">Undo</button>
-          <br><br>
+          <br>
+          <button class="undoButton btn btn-outline-primary" @click="undo">Undo Move</button>
+          <br><br><br><br>
         </div>
         <table>
           <tr>
@@ -45,7 +46,8 @@
             <td v-on:click="insertItem(8)" class="cell cell8" id="8"><div v-html="obj[8]"></div></td>
           </tr>
         </table>
-        <center style="margin-top:400px"><button class="btn btn-primary restartButton" v-on:click="restartGame"> Restart Game </button></center>
+        <br><br>
+        <center style="margin-top:400px;"><button class="btn btn-primary restartButton" v-on:click="restartGame"> Restart Game </button></center>
       </div>
     </p>
   </div>
@@ -118,7 +120,7 @@ export default {
         if(checkWinner(this.playerAPlays)){
           this.winnerMessage = true;
           if(this.standardMode){
-            this.WinnerMessageText = '<strong style="color:red; font-size:84px">O</strong>';
+            this.WinnerMessageText = 'O is the Winner! ';
           }
           else if(this.championshipMode){
             this.WinnerMessageText = this.seanConnery + " is the winner!";
@@ -223,13 +225,15 @@ li {
 a {
   color: #42b983;
 }
+.undoButton, .restartButton{
+  margin-left: 20px;
+}
 td {
   border:  2px solid #333;
   height:  126px;
-  width:  126px;
+  width:  110px;
   text-align:  center;
   vertical-align:  middle;
-  /* font-family:  "Comic Sans MS", cursive, sans-serif; */
   font-size:  70px;
   cursor: pointer;
   }

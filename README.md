@@ -1,39 +1,40 @@
-# tic_tac_toe
+# Tic Tac Toe
+
+### Features
+* User vs User functionality
+* Undo button to undo the last move
+* Restart button to restart the game
+* Game can be played in two modes: Standard mode and Championship mode (Enabled by entering Frontenddevlandia)
+
+### Front End Technologies
+* Vue.js
+
+### OS and browser compatibility
+This app is only tested in Mac OS and on Google Chrome browser.
+
+The following steps demonstrates how to install and run the application:
+
+### Prerequisites
+
+* [NodeJS](https://nodejs.org/en/download/)
 
 ## Project setup
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### To run the app
 ```
 npm run serve
 ```
+Now open http://localhost:8080
 
-### Compiles and minifies for production
+### To build for production
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Run your end-to-end tests
-```
-npm run test:e2e
-```
-
-### Run your unit tests
+### To run the unit tests
 ```
 npm run test:unit
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
