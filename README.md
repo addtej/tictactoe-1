@@ -7,7 +7,7 @@
 * Game can be played in two modes: Standard mode and Championship mode (Enabled by entering Frontenddevlandia)
 
 ### Front End Technologies
-* Vue.js
+* Vue.js, Bootstrap
 
 ### OS and browser compatibility
 This app is only tested in Mac OS and on Google Chrome browser.
