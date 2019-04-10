@@ -1,7 +1,7 @@
 <template>
   <div class="hello" style="margin-top:50px;">
-    <pre><a v-if="standardMode" style="color:#46B987; cursor:pointer"  @click="enterCampionShip">Enter Frontenddevlandia</a></pre>
-    <pre><a v-if="championshipMode" style="color:#46B987; cursor:pointer"  @click="enterStandardMode">Enter Standard Mode</a></pre>
+    <pre><button class="btn btn-outline-success" v-if="standardMode" style="color:#46B987; font-size:18px; cursor:pointer"  @click="enterCampionShip">Enter Frontenddevlandia</button></pre>
+    <pre><button class="btn btn-outline-success" v-if="championshipMode" style="color:#46B987; font-size:18px; cursor:pointer"  @click="enterStandardMode">Enter Standard Mode</button></pre>
     <p>
       <div id="app">
         <div v-if="winnerMessage">
